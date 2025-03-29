@@ -1,0 +1,3 @@
+[submodule "courses/number_sense"]
+	path = courses/number_sense
+	url = https://github.com/El-Guapo2024/number_sense_course.git
