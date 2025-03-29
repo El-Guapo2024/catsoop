@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  catsoop:
+    build: 
+      context: ../../..
+      dockerfile: catsoop/scripts/docker/Dockerfile
+    ports:
+      - "7667:7667"
+    volumes:
+      - catsoop_data:/app/data
+    environment:
+      - CATSOOP_HOST=0.0.0.0
+      - CATSOOP_PORT=7667
+      - CATSOOP_CONFIG=/root/.config/catsoop/config.py
+      - CATSOOP_DATA_DIR=/app/data
+      - CATSOOP_CONFIG_DIR=/root/.config/catsoop
+    restart: unless-stopped
+
+volumes:
+  catsoop_data: 
